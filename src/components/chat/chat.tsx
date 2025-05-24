@@ -16,7 +16,8 @@ export function Chat() {
     {
       id: "welcome",
       role: "assistant",
-      content: "Hello! How can I help you today?",
+      content:
+        "สวัสดีค่ะ ดิฉันคือระบบผู้ช่วยสัมภาษณ์อัจฉริยะที่จะดูแลขั้นตอนเบื้องต้นของการสัมภาษณ์งานในวันนี้ ก่อนที่เราจะเริ่ม ดิฉันขอทราบชื่อนามสกุล และตำแหน่งล่าสุดของคุณก่อนนะคะ?",
       timestamp: new Date(),
     },
   ]);
@@ -51,7 +52,6 @@ export function Chat() {
       const apiMessages = messages
         .concat(userMessage)
         .map(({ role, content }) => ({ role, content }));
-
       const response = await sendChatMessage(apiMessages);
 
       setMessages((prev) => [
@@ -59,7 +59,7 @@ export function Chat() {
         {
           id: uuidv4(),
           role: "assistant",
-          content: response,
+          content: response.reply,
           timestamp: new Date(),
         },
       ]);
@@ -80,7 +80,8 @@ export function Chat() {
       {
         id: "welcome",
         role: "assistant",
-        content: "Hello! How can I help you today?",
+        content:
+          "สวัสดีค่ะ ดิฉันคือระบบผู้ช่วยสัมภาษณ์อัจฉริยะที่จะดูแลขั้นตอนเบื้องต้นของการสัมภาษณ์งานในวันนี้ ก่อนที่เราจะเริ่ม ดิฉันขอทราบชื่อนามสกุล และตำแหน่งล่าสุดของคุณก่อนนะคะ?",
         timestamp: new Date(),
       },
     ]);

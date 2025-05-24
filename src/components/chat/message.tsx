@@ -20,7 +20,7 @@ export function Message({ message }: MessageProps) {
     >
       {!isUser && (
         <Avatar className="h-8 w-8 border bg-primary text-primary-foreground">
-          <Bot className="h-4 w-4" />
+          <Bot className="h-7 w-7" />
         </Avatar>
       )}
 
@@ -42,7 +42,7 @@ export function Message({ message }: MessageProps) {
 
       {isUser && (
         <Avatar className="h-8 w-8 border bg-secondary">
-          <User className="h-4 w-4" />
+          <User className="h-7 w-7" />
         </Avatar>
       )}
     </div>
